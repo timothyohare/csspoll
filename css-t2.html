@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>test 2</title>
+<style type="text/css">
+#leftHalf {
+    /*background: url(images/bg-1.jpg);*/
+    background-color: #FF3333;
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+}
+#rightHalf {
+    /*background: url(images/bg-2.jpg);*/
+    background-color: green;
+    width: 50%;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+</style>
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+<div id="leftHalf">
+ <p>Left Half
+  </p>
+</div>
+<div id="rightHalf">
+<p>
+Right Half
+</p></div>
+<script>
+ $("#leftHalf").on( "click", function() {
+    $( "#leftHalf" ).css( "width", "+=10%" );
+    $( "#rightHalf" ).css( "width", "-=10%" );
+    var width = $( "#leftHalf" ).css( "width");
+    $("p:last").html( width.text());
+ });
+ $("#rightHalf").on( "click", function() {
+    $( "#rightHalf" ).css( "width", "+=10%" );
+    $( "#leftHalf" ).css( "width", "-=10%" );
+ });
+</script>
+</body>
+</html>
+
